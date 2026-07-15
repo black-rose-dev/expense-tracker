@@ -1,14 +1,8 @@
 const express = require('express');
+const pool = require('./db'); // import the shared pool
+
 const app = express();
 app.use(express.json());
-
-const { Pool } = require('pg');
-const pool = new Pool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-});
 
 app.post('/expenses', async (req, res) => {
   const { amount, category, date, description } = req.body;
@@ -28,3 +22,4 @@ app.listen(3000, () => {
   console.log('Backend running on port 3000');
 });
 
+module.exports = app;
