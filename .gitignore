@@ -1,1 +1,2 @@
-backend/node_modules/
+# Ignore all node_modules folders everywhere
+node_modules/
