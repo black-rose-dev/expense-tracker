@@ -18,8 +18,4 @@ app.get('/expenses', async (req, res) => {
   res.send(result.rows);
 });
 
-app.listen(3000, () => {
-  console.log('Backend running on port 3000');
-});
-
 module.exports = app;
